@@ -1,13 +1,8 @@
 # Damn Vulnerable NodeJS Application
-
-FROM node:carbon
+FROM node:20-slim
 LABEL MAINTAINER "Subash SN"
-
 WORKDIR /app
-
 COPY . .
-
 RUN chmod +x /app/entrypoint.sh \
-	&& npm install
-
+    && npm install
 CMD ["bash", "/app/entrypoint.sh"]
